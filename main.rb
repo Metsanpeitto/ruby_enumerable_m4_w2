@@ -26,6 +26,3 @@ puts list.my_any? {|e| e == 5}
 puts "Test #filter"
 puts "|e| e.even? Should return [2,4]"
 puts list.my_filter?{|e| e.even?}
-
-
-
