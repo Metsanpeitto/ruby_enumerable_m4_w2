@@ -1,32 +1,31 @@
-require_relative 'myenumerable'
+require_relative 'my_enumerable'
 
-class MyList
-  extend Enumerable
-
-  def initialize(int1, int2, int3, int4)
+class MyList 
+include Enumerable
+  def initialize(int1, int2, int3, int4)   
     @list = [int1, int2, int3, int4]
-  end
-
-  def all?
-    puts(@list.my_all? { |num| num >= 0 })
-  end
-
-  def any?
-    puts(@list.my_any? { |num| num >= 0 })
-  end
-
-  def filter?
-    puts(@list.my_filter? { |num| num == 0 })
   end
 end
 
 list = MyList.new(1, 2, 3, 4)
-puts 'Test #all?'
-puts 'Should return true'
-puts list.all? { |e| e < 5 }
-puts 'Test #any?'
-puts 'Should return true'
-puts list.any? { |e| e > 5 }
-puts 'Test #filter?'
-puts 'Should return 3'
-puts list.filter? { |e| e == 3 }
+
+
+puts "Test #all?" 
+puts list.my_all? {|n| n < 5 }
+puts "|n| n < 5 Should return true"
+puts list.my_all? {|n| n > 5}
+puts "|n| n > 5 Should return false"
+
+puts "Test #any?"
+puts "|e| e == 2 Should return true"
+puts list.my_any? {|e| e == 2}
+puts "|e| |e| e == 5 Should return false"
+puts list.my_any? {|e| e == 5}
+
+
+puts "Test #filter"
+puts "|e| e.even? Should return [2,4]"
+puts list.my_filter?{|e| e.even?}
+
+
+
