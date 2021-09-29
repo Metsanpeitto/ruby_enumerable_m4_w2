@@ -21,15 +21,15 @@ module Enumerable
     any
   end
 
-  def my_filter?
-    return unless block_given?
-    numbers = []
-    @list.each do |n|  
-      if(yield(n))  
-       numbers.push(n)  
-      end 
-    end
-    numbers
-  end
+#   def my_filter?
+#     return unless block_given?
+#     numbers = []
+#     @list.each do |n|  
+#       if(yield(n))  
+#        numbers.push(n)  
+#       end 
+#     end
+#     numbers
+#   end
 
-end
+# end
